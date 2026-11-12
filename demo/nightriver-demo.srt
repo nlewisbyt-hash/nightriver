@@ -1,0 +1,31 @@
+1
+00:00:01,000 --> 00:00:10,500
+NightRiver is a local-first River of News.
+It merges RSS and Atom feeds into one chronological briefing, with no cloud account.
+
+2
+00:00:11,000 --> 00:00:24,000
+First, add the three offline demo sources.
+
+3
+00:00:24,500 --> 00:00:38,000
+The list shows each feed title and how many items are cached.
+
+4
+00:00:38,500 --> 00:00:52,000
+Refresh reads the local fixture feeds — no network.
+Then we generate today's briefing as Markdown and HTML.
+
+5
+00:00:52,500 --> 00:01:03,000
+The project was created with Kiro CLI during the contest window.
+The repo keeps specs, a PostFileSave validation hook, and briefing steering.
+
+6
+00:01:08,000 --> 00:01:40,000
+This is the river: items from three sources, newest first,
+each with a source, a timestamp, a link, and a one-sentence summary.
+
+7
+00:01:40,000 --> 00:01:45,000
+NightRiver runs locally. Testing steps are in TESTING.md.

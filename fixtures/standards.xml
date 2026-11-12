@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web Standards Weekly</title>
+    <link>https://webstandards.example.net</link>
+    <description>Tracking W3C, IETF, WHATWG, and TC39 activity.</description>
+    <language>en</language>
+    <lastBuildDate>Thu, 12 Nov 2026 07:00:00 +0000</lastBuildDate>
+    <atom:link href="https://webstandards.example.net/feed.rss" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>CSS Anchor Positioning Reaches Candidate Recommendation</title>
+      <link>https://webstandards.example.net/items/css-anchor-positioning-cr</link>
+      <pubDate>Thu, 12 Nov 2026 06:30:00 +0000</pubDate>
+      <guid isPermaLink="true">https://webstandards.example.net/items/css-anchor-positioning-cr</guid>
+      <description>The W3C CSS Working Group published CSS Anchor Positioning as a Candidate Recommendation, formalising the anchor-name and position-anchor properties that allow elements to be positioned relative to arbitrary anchors elsewhere in the document.</description>
+    </item>
+
+    <item>
+      <title>TC39 Advances Signals Proposal to Stage 3</title>
+      <link>https://webstandards.example.net/items/tc39-signals-stage3</link>
+      <pubDate>Wed, 11 Nov 2026 20:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://webstandards.example.net/items/tc39-signals-stage3</guid>
+      <description>TC39 advanced the Signals proposal to stage 3, introducing a first-class reactive primitive to JavaScript that harmonises with framework-level reactivity systems already in widespread use.</description>
+    </item>
+
+    <item>
+      <title>WHATWG Merges Invoker Commands into the HTML Living Standard</title>
+      <link>https://webstandards.example.net/items/whatwg-invoker-commands</link>
+      <pubDate>Mon, 10 Nov 2026 15:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://webstandards.example.net/items/whatwg-invoker-commands</guid>
+      <description>WHATWG merged the Invoker Commands spec into the HTML Living Standard, adding the invoketarget and invokeaction attributes to button and input elements for declarative UI interactions.</description>
+    </item>
+
+    <item>
+      <title>IETF RFC 9728: HTTP Resumable Uploads Published</title>
+      <link>https://webstandards.example.net/items/rfc9728-resumable-uploads</link>
+      <pubDate>Sat, 08 Nov 2026 12:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://webstandards.example.net/items/rfc9728-resumable-uploads</guid>
+      <description>IETF published RFC 9728, defining a standard protocol for resumable HTTP uploads that allows clients to resume interrupted transfers from the last acknowledged byte rather than restarting from the beginning.</description>
+    </item>
+
+    <item>
+      <title>WebAssembly Garbage Collection Reaches Phase 4</title>
+      <link>https://webstandards.example.net/items/wasm-gc-phase4</link>
+      <pubDate>Thu, 06 Nov 2026 09:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://webstandards.example.net/items/wasm-gc-phase4</guid>
+      <description>The WebAssembly Working Group announced that the Garbage Collection extension reached Phase 4, completing the standardisation process and enabling managed-memory languages like Kotlin and Dart to compile to Wasm without bundling a custom GC.</description>
+    </item>
+
+    <item>
+      <title>CSS Color Level 5 Functions Land in Safari 20</title>
+      <link>https://webstandards.example.net/items/css-color-5-safari-20</link>
+      <pubDate>Tue, 04 Nov 2026 11:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://webstandards.example.net/items/css-color-5-safari-20</guid>
+      <description>Safari 20 shipped support for CSS Color Level 5 functions including color-mix() with all interpolation methods and relative color syntax, bringing full cross-browser parity for the new color features.</description>
+    </item>
+  </channel>
+</rss>

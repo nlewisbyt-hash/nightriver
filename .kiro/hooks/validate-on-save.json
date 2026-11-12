@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "validate-on-save",
+      "description": "When subscriptions or fixture XML files are saved in the Kiro session, run NightRiver's validator to catch invalid URLs and broken XML immediately.",
+      "trigger": "PostFileSave",
+      "matcher": "(data/subscriptions\\.json|fixtures/[^/]+\\.xml)$",
+      "action": {
+        "type": "command",
+        "command": "python -m nightriver validate"
+      }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+
+# Local runtime data (reproducible via: python -m nightriver add-fixtures && python -m nightriver refresh)
+data/subscriptions.json
+data/cache/*.json
+data/brief-*.md
+data/brief-*.html
+
+# Keep directory placeholders
+!data/.gitkeep
+!data/cache/.gitkeep
+
+# NEVER ignore .kiro (Kiroween rule: specs, hooks, and steering must be in the repo)
+# !.kiro/

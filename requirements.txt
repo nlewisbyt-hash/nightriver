@@ -1,0 +1,4 @@
+# NightRiver dependencies
+# feedparser: RSS 2.0 and Atom 1.0 parsing (BSD-2-Clause license)
+# https://pypi.org/project/feedparser/
+feedparser==6.0.11

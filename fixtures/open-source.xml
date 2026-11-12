@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Open Source Release Watch</title>
+  <subtitle>Notable releases from the open-source ecosystem.</subtitle>
+  <link href="https://oswatch.example.org" rel="alternate"/>
+  <link href="https://oswatch.example.org/atom.xml" rel="self"/>
+  <id>https://oswatch.example.org/atom.xml</id>
+  <updated>2026-11-12T08:30:00Z</updated>
+  <author>
+    <name>OS Watch Team</name>
+  </author>
+
+  <entry>
+    <title>Python 3.14.0 Beta 1 Released</title>
+    <link href="https://oswatch.example.org/releases/python-3-14-0b1"/>
+    <id>https://oswatch.example.org/releases/python-3-14-0b1</id>
+    <published>2026-11-12T06:00:00Z</published>
+    <updated>2026-11-12T06:00:00Z</updated>
+    <summary>The CPython development team released Python 3.14.0 beta 1, introducing experimental support for lazy imports and a new free-threading mode that removes the GIL under a build flag.</summary>
+  </entry>
+
+  <entry>
+    <title>Rust 1.84.0 Stabilises Arbitrary Self Types</title>
+    <link href="https://oswatch.example.org/releases/rust-1-84"/>
+    <id>https://oswatch.example.org/releases/rust-1-84</id>
+    <published>2026-11-11T18:00:00Z</published>
+    <updated>2026-11-11T18:00:00Z</updated>
+    <summary>Rust 1.84.0 ships with arbitrary self types v2 stabilised, allowing smart pointer types to be used as method receivers without the unstable feature flag.</summary>
+  </entry>
+
+  <entry>
+    <title>SQLite 3.48.0 Adds Indexed Expressions on Virtual Tables</title>
+    <link href="https://oswatch.example.org/releases/sqlite-3-48"/>
+    <id>https://oswatch.example.org/releases/sqlite-3-48</id>
+    <published>2026-11-10T12:00:00Z</published>
+    <updated>2026-11-10T12:00:00Z</updated>
+    <summary>SQLite 3.48.0 extends expression indexes to virtual tables and fixes a query planner edge case that caused full scans on certain LEFT JOIN patterns.</summary>
+  </entry>
+
+  <entry>
+    <title>curl 8.12.0 Defaults to HTTP/3 When Available</title>
+    <link href="https://oswatch.example.org/releases/curl-8-12"/>
+    <id>https://oswatch.example.org/releases/curl-8-12</id>
+    <published>2026-11-09T10:00:00Z</published>
+    <updated>2026-11-09T10:00:00Z</updated>
+    <summary>curl 8.12.0 upgrades automatically to HTTP/3 when the server advertises QUIC support via Alt-Svc, with a new --http3-only flag for strict enforcement.</summary>
+  </entry>
+
+  <entry>
+    <title>Git 2.48 Ships Reftable Storage Backend as Default</title>
+    <link href="https://oswatch.example.org/releases/git-2-48"/>
+    <id>https://oswatch.example.org/releases/git-2-48</id>
+    <published>2026-11-07T14:00:00Z</published>
+    <updated>2026-11-07T14:00:00Z</updated>
+    <summary>Git 2.48 makes the reftable reference storage backend the default for new repositories, replacing the packed-refs text file format and improving performance for repositories with large numbers of branches.</summary>
+  </entry>
+
+  <entry>
+    <title>Node.js 24.0 LTS Enters Maintenance Mode</title>
+    <link href="https://oswatch.example.org/releases/nodejs-24-lts"/>
+    <id>https://oswatch.example.org/releases/nodejs-24-lts</id>
+    <published>2026-11-05T08:00:00Z</published>
+    <updated>2026-11-05T08:00:00Z</updated>
+    <summary>Node.js 24 moved to maintenance LTS status, meaning it will receive only critical bug fixes and security patches until its end-of-life date in April 2028.</summary>
+  </entry>
+</feed>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tangent Tech Blog</title>
+    <link>https://tangent.example.com</link>
+    <description>Engineering notes from the Tangent team.</description>
+    <language>en</language>
+    <lastBuildDate>Thu, 12 Nov 2026 08:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tangent.example.com/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>Migrating a Monolith to Services Without a Rewrite</title>
+      <link>https://tangent.example.com/posts/monolith-migration</link>
+      <pubDate>Thu, 12 Nov 2026 07:45:00 +0000</pubDate>
+      <guid isPermaLink="true">https://tangent.example.com/posts/monolith-migration</guid>
+      <description>We spent six months moving our Rails monolith to independently deployable services by using the strangler-fig pattern on a single bounded context at a time, keeping the existing API surface unchanged throughout the migration.</description>
+    </item>
+
+    <item>
+      <title>How We Reduced Build Times by 60% with Remote Caching</title>
+      <link>https://tangent.example.com/posts/remote-cache-builds</link>
+      <pubDate>Tue, 10 Nov 2026 14:30:00 +0000</pubDate>
+      <guid isPermaLink="true">https://tangent.example.com/posts/remote-cache-builds</guid>
+      <description>By sharing a Bazel remote cache across all CI runners, we cut median build time from 8 minutes to under 3 minutes without changing any build targets or source files.</description>
+    </item>
+
+    <item>
+      <title>A Practical Guide to Structured Logging in Python</title>
+      <link>https://tangent.example.com/posts/structured-logging-python</link>
+      <pubDate>Sat, 08 Nov 2026 10:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://tangent.example.com/posts/structured-logging-python</guid>
+      <description>Switching from unstructured print statements to structlog with JSON output made log aggregation and alerting dramatically easier, and required changing fewer than twenty lines per service.</description>
+    </item>
+
+    <item>
+      <title>Postgres JSONB vs. Dedicated Document Store: A Measured Comparison</title>
+      <link>https://tangent.example.com/posts/jsonb-vs-document-store</link>
+      <pubDate>Wed, 05 Nov 2026 09:15:00 +0000</pubDate>
+      <guid isPermaLink="true">https://tangent.example.com/posts/jsonb-vs-document-store</guid>
+      <description>Under our read-heavy workload, Postgres JSONB with a GIN index matched the query throughput of a dedicated document store while eliminating the operational burden of running a second database.</description>
+    </item>
+
+    <item>
+      <title>Writing Runbooks That Engineers Actually Read</title>
+      <link>https://tangent.example.com/posts/runbooks-engineers-read</link>
+      <pubDate>Mon, 03 Nov 2026 16:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://tangent.example.com/posts/runbooks-engineers-read</guid>
+      <description>Keeping runbooks short, test-driven, and co-located with the service code reduced our mean time to recovery by 35% over the following quarter.</description>
+    </item>
+  </channel>
+</rss>
