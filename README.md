@@ -46,8 +46,9 @@ previews are in [demo/DEMO_SCRIPT.md](demo/DEMO_SCRIPT.md).
 ### Contest status (verified)
 
 - Formally Joined on Devpost as `nlewisbyt` on 2026-11-12 (Asia/Shanghai).
-- Not formally Submitted.
-- No public GitHub repository has been created or pushed.
+- Not formally Submitted to Devpost.
+- A public GitHub repository is being prepared. The tree is ready to push to an empty public repository under [`nlewisbyt-hash`](https://github.com/nlewisbyt-hash) once that URL is provided. Nothing has been pushed yet, and no remote is configured.
+- The demo video is at `demo/nightriver-demo.mp4` (1:45, 1280×720, English burned-in subtitles). A public YouTube URL will be added after upload; no YouTube link is invented here.
 
 ---
 
