@@ -13,6 +13,7 @@ Commands:
 
 import argparse
 import datetime
+import shutil
 import sys
 import urllib.parse
 
@@ -195,6 +196,121 @@ def cmd_add_fixtures() -> int:
 # list
 # ---------------------------------------------------------------------------
 
+LIST_INDEX_WIDTH = 3
+LIST_TITLE_WIDTH = 35
+LIST_TITLE_MAX = 34
+LIST_ITEMS_WIDTH = 5
+LIST_COL_GAP = 2
+LIST_PREFIX_WIDTH = (
+    LIST_INDEX_WIDTH
+    + LIST_COL_GAP
+    + LIST_TITLE_WIDTH
+    + LIST_COL_GAP
+    + LIST_ITEMS_WIDTH
+    + LIST_COL_GAP
+)  # 49 characters before the URL column
+LIST_MIN_URL_ROOM = 8
+
+
+def _wrap_url(url: str, first_width: int, cont_width: int) -> list[str]:
+    """Wrap *url* to the given widths, preferring breaks after '/'."""
+    if not url:
+        return [""]
+
+    def clamp(value: int) -> int:
+        return max(1, value)
+
+    lines: list[str] = []
+    remaining = url
+    width = clamp(first_width)
+    while remaining:
+        if len(remaining) <= width:
+            lines.append(remaining)
+            break
+        chunk = remaining[:width]
+        brk = chunk.rfind("/")
+        # Require brk >= 1 so a leading slash still lets us make progress.
+        if brk >= 1:
+            lines.append(remaining[: brk + 1])
+            remaining = remaining[brk + 1 :]
+        else:
+            lines.append(chunk)
+            remaining = remaining[width:]
+        width = clamp(cont_width)
+    return lines
+
+
+def format_list_table(
+    rows: list[tuple[int, str, int, str]],
+    width: int = 80,
+) -> str:
+    """Format subscription rows for the `list` command.
+
+    Each row is ``(index, title, item_count, url)``. Titles longer than 34
+    characters are truncated. Every output line is at most *width*
+    characters. Long URLs wrap with a hanging indent aligned to the URL
+    column when the terminal is wide enough; on very narrow terminals the
+    URL starts on the following line with a small indent.
+    """
+    width = max(1, width)
+    header = (
+        f"{'#':<{LIST_INDEX_WIDTH}}"
+        f"{' ' * LIST_COL_GAP}"
+        f"{'Title':<{LIST_TITLE_WIDTH}}"
+        f"{' ' * LIST_COL_GAP}"
+        f"{'Items':>{LIST_ITEMS_WIDTH}}"
+        f"{' ' * LIST_COL_GAP}"
+        "URL"
+    )
+    if len(header) > width:
+        header = "#  Title  Items  URL"
+        if len(header) > width:
+            header = header[:width]
+
+    url_on_first_line = width >= LIST_PREFIX_WIDTH + LIST_MIN_URL_ROOM
+    if url_on_first_line:
+        url_indent = LIST_PREFIX_WIDTH
+        first_width = width - LIST_PREFIX_WIDTH
+        cont_width = width - url_indent
+    else:
+        url_indent = min(4, max(0, width - 1))
+        first_width = 0
+        cont_width = width - url_indent
+
+    sep = "-" * min(width, 80)
+    out: list[str] = [header, sep]
+
+    for index, title, n_items, url in rows:
+        display_title = (title or "(unknown)")[:LIST_TITLE_MAX]
+        prefix = (
+            f"{index:<{LIST_INDEX_WIDTH}}"
+            f"{' ' * LIST_COL_GAP}"
+            f"{display_title:<{LIST_TITLE_WIDTH}}"
+            f"{' ' * LIST_COL_GAP}"
+            f"{n_items:>{LIST_ITEMS_WIDTH}}"
+            f"{' ' * LIST_COL_GAP}"
+        )
+        if url_on_first_line:
+            wrapped = _wrap_url(url, first_width, cont_width)
+            out.append(prefix + wrapped[0])
+            indent = " " * url_indent
+            for part in wrapped[1:]:
+                out.append(indent + part)
+        else:
+            first = f"{index}  {display_title}  {n_items}"
+            if len(first) > width:
+                reserved = len(f"{index}  ") + len(f"  {n_items}")
+                avail = max(1, width - reserved)
+                first = f"{index}  {display_title[:avail]}  {n_items}"[:width]
+            out.append(first)
+            wrapped = _wrap_url(url, cont_width, cont_width)
+            indent = " " * url_indent
+            for part in wrapped:
+                out.append(indent + part)
+
+    return "\n".join(out)
+
+
 def cmd_list() -> int:
     subs = load_subscriptions()
     if not subs:
@@ -203,16 +319,16 @@ def cmd_list() -> int:
         print("  → Or:  python -m nightriver add-fixtures  (for offline demo)")
         return 0
 
-    print(f"{'#':<3}  {'Title':<35}  {'Items':>5}  URL")
-    print("-" * 80)
+    rows: list[tuple[int, str, int, str]] = []
     for i, sub in enumerate(subs, 1):
         fid = feed_id(sub["url"])
         cached = load_cache(fid)
         n_items = len(cached["items"]) if cached else 0
-        title = sub.get("title", "(unknown)")[:34]
-        url = sub["url"]
-        print(f"{i:<3}  {title:<35}  {n_items:>5}  {url}")
+        title = sub.get("title", "(unknown)")
+        rows.append((i, title, n_items, sub["url"]))
 
+    width = shutil.get_terminal_size(fallback=(80, 24)).columns
+    print(format_list_table(rows, width=width))
     return 0
 
 

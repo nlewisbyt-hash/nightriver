@@ -54,6 +54,17 @@ python -m nightriver add fixtures/tech-blog.xml
 feed needs network and is optional. A failing URL should print a clear
 error and must not be stored.
 
+## Unit tests
+
+From the repository root, with the virtual environment active:
+
+```bash
+python -m unittest discover -s tests -v
+```
+
+These cover `list` table formatting, including wrapping of long `file://`
+URLs so they stay within the terminal width.
+
 ## Kiro artifacts to inspect
 
 At the repository root:

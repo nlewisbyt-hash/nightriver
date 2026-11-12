@@ -296,6 +296,8 @@ app/
 │   │   └── briefing-tone.md   (inclusion: always)
 │   └── hooks/
 │       └── validate-on-save.json
+├── tests/
+│   └── test_list_format.py
 ├── requirements.txt
 └── README.md
 ```
