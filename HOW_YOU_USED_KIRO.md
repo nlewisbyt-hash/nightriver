@@ -163,10 +163,7 @@ not claim it.
 - Formally **Joined** on Devpost as `nlewisbyt` on 2026-11-12
   (Asia/Shanghai).
 - **Not** formally Submitted to Devpost.
-- A public GitHub repository is being prepared. The tree is ready to
-  push to an empty public repository under `nlewisbyt-hash` once that
-  URL is provided. Nothing has been pushed yet, and no remote is
-  configured.
+- Public repository: [`nlewisbyt-hash/nightriver`](https://github.com/nlewisbyt-hash/nightriver).
 - A local demo video is in `demo/nightriver-demo.mp4`. A public YouTube
   URL will be added after upload; no YouTube link is invented here.
 - The application remains a local CLI; judges can follow `TESTING.md`.

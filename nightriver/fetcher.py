@@ -86,7 +86,7 @@ def fetch_feed(url: str) -> dict[str, Any]:
         try:
             req = urllib.request.Request(
                 resolved,
-                headers={"User-Agent": "NightRiver/0.1 (+https://github.com/nightriver)"},
+                headers={"User-Agent": "NightRiver/0.1 (+https://github.com/nlewisbyt-hash/nightriver)"},
             )
             with urllib.request.urlopen(req, timeout=FETCH_TIMEOUT) as resp:
                 if resp.status != 200:
